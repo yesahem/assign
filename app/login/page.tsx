@@ -11,12 +11,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {  login, Signup } from '@/actions/user'
+import {  login, loginWithGoogle, Signup } from '@/actions/user'
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
-export default function Login() {
+
+export default  function Login() {
+  
   return (
     <div className="flex items-center justify-center h-[100vh]">
       <Card className="w-[350px]">
@@ -45,8 +47,18 @@ export default function Login() {
           >
             Signup
           </Button>
+          
           <Button variant="outline" className="cursor-pointer" formAction={login}>
             Login
+          </Button>
+          <Button
+            className="cursor-pointer"
+            formAction={loginWithGoogle}
+            onClick={() => {
+              alert("LoggedIn");
+            }}
+          >
+            Login with Google 
           </Button>
           </form>
         </CardContent>
