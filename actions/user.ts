@@ -58,4 +58,11 @@ export async function login(formData: FormData) {
         redirect(data.url) // use the redirect API for your server framework
       }
   }
+  
+  
+  
+  export async function  signOut(){
+    const supabase = await createClient()
+    await supabase.auth.signOut()
+  }
 
